@@ -1,9 +1,28 @@
 import React, { useState } from 'react';
 import data from './data';
 import List from './List';
-function App() {
-  return <h2>reminder project setup</h2>;
 
+function App() {
+  const [people, personsDisplay] = useState(data);
+
+  function buttonHandler() {
+    personsDisplay([]);
+  };
+
+  let numElements = 0;
+  people.forEach(() => {
+    numElements++;
+  });
+
+  return (
+    <>
+      <h2>{numElements + ' birthdays today'}</h2>
+      {
+        <List people={people} />
+      }
+      <button className='btn' onClick={buttonHandler}>Clear all</button>
+    </>
+  );
 }
 
 export default App;
