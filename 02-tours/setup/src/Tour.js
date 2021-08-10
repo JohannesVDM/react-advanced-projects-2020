@@ -3,9 +3,6 @@ import React, { useState } from 'react';
 const Tour = ({ id, image, info, price, name, removeTour }) => {
   const [readMore, setReadMore] = useState(false);
 
-  // function interestButtonHandler() {
-  //   setRemainder = ([]);
-  // }
   return (
     <article className="single-tour">
       <img src={image} alt={name} />
